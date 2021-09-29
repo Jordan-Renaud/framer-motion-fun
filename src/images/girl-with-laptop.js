@@ -16,9 +16,9 @@ export default () => (
         y2="75.83"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.2" stop-color="gray" stop-opacity="0.4" />
-        <stop offset="0.46" stop-color="gray" stop-opacity="0.5" />
-        <stop offset="1" stop-opacity="0.6" />
+        <stop offset="0.2" stopColor="gray" stopOpacity="0.4" />
+        <stop offset="0.46" stopColor="gray" stopOpacity="0.5" />
+        <stop offset="1" stopOpacity="0.6" />
       </linearGradient>
       <linearGradient
         id="528408a2-f79a-48f6-b2a6-578d2aaf4c5c"
@@ -28,9 +28,9 @@ export default () => (
         y2="223.2"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-        <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-        <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+        <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+        <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+        <stop offset="1" stopColor="gray" stopOpacity="0.1" />
       </linearGradient>
     </defs>
     <title>working late</title>
