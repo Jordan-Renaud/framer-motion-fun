@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { motion } from "framer-motion";
+import LaptopLady from "./images/girl-with-laptop.js";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <motion.div
+        className="card"
+        whileHover={{
+          scale: 1.01,
+          transition: { duration: 0.3 },
+        }}
+      >
+        <LaptopLady className="back" />
+      </motion.div>
+
+      <motion.button
+        className="next-button"
+        whileHover={{
+          scale: 1.01,
+          transition: { duration: 0.3 },
+        }}
+      >
+        -->
+      </motion.button>
     </div>
   );
 }
 
 export default App;
+
+//className="card"
