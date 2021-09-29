@@ -1,0 +1,21 @@
+.Card {
+  width: 400px;
+  height: 575px;
+  background-color: #d4dfec;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px hsl(220deg 60% 50% / 0.2),
+    2px 4px 4px hsl(220deg 60% 50% / 0.2), 4px 8px 8px hsl(220deg 60% 50% / 0.2),
+    8px 16px 16px hsl(220deg 60% 50% / 0.2),
+    16px 32px 32px hsl(220deg 60% 50% / 0.2);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.Card .back {
+  width: 300px;
+}
+
+.Card:hover {
+  cursor: pointer;
+}
