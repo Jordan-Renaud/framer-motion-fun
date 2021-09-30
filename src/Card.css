@@ -1,4 +1,5 @@
 .Card {
+  grid-area: 2 / 2 / 3 / 2;
   width: 400px;
   height: 575px;
   background-color: #d4dfec;

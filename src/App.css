@@ -4,6 +4,17 @@
   display: grid;
   justify-content: center;
   align-content: center;
+  justify-items: center;
   background-color: #99bbff;
-  row-gap: 1rem;
+  gap: 5rem 100px;
+  grid-template-columns: minmax(400px, auto) minmax(400px, auto);
+}
+
+.App .title {
+  justify-self: center;
+  grid-column: span 2;
+  margin: 0;
+  color: #3f3d56;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
 }
