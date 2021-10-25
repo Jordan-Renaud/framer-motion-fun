@@ -6,8 +6,6 @@
   align-content: center;
   justify-items: center;
   background-color: #99bbff;
-  gap: 5rem 100px;
-  grid-template-columns: minmax(400px, auto) minmax(400px, auto);
 }
 
 .App .title {
@@ -17,4 +15,18 @@
   color: #3f3d56;
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 2px;
+}
+
+.App .card-container {
+  display: grid;
+  gap: 5rem 100px;
+  justify-content: center;
+  align-content: center;
+  /* 400px is the current size of the cards */
+  grid-template-columns: minmax(400px, auto) minmax(400px, auto);
+}
+
+.App .card-container > div {
+  display: grid;
+  z-index: 0;
 }

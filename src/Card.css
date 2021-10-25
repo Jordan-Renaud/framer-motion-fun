@@ -1,5 +1,4 @@
 .Card {
-  grid-area: 2 / 2 / 3 / 2;
   width: 400px;
   height: 575px;
   background-color: #d4dfec;
@@ -13,8 +12,16 @@
   align-content: center;
 }
 
-.Card .back {
-  width: 300px;
+.Card.top-of-deck {
+  z-index: 99;
+}
+
+.Card.front {
+  grid-area: 2 / 2 / 3 / 2;
+}
+
+.Card.back {
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .Card:hover {

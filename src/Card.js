@@ -1,31 +1,29 @@
 import "./Card.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import LaptopLady from "./images/girl-with-laptop.js";
 
 const variants = {
-  preClick: { rotateY: 0, x: 0 },
-  postClick: { rotateY: 180, x: -500 },
+  preClick: { rotateY: 0 },
+  postClick: { rotateY: 180 },
 };
 
-export default function Card({ content }) {
-  const [isClicked, setIsClicked] = useState(false);
-
+export default function Card({ content, handleCardState, deckSide }) {
   return (
     <motion.div
-      className="Card"
-      onClick={() => setIsClicked((isClicked) => !isClicked)}
+      layout
+      layoutId={content}
+      className={`Card ${deckSide}`}
+      onClick={handleCardState}
       whileHover={{
         scale: 1.01,
         transition: { duration: 0.3 },
       }}
-      initial={{ rotateY: 0, x: 0 }}
-      animate={isClicked ? "postClick" : "preClick"}
+      initial={deckSide === "front" ? "postClick" : "preClick"}
+      animate={deckSide === "back" ? "postClick" : "preClick"}
       variants={variants}
       transition={{ duration: 1.5 }}
     >
-      <LaptopLady className="back" />
-      <p>{content}</p>
+      {deckSide === "back" ? <LaptopLady /> : <p>{content}</p>}
     </motion.div>
   );
 }
