@@ -1,4 +1,5 @@
 import "./Card.css";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import LaptopLady from "./images/girl-with-laptop.js";
 
@@ -8,8 +9,16 @@ const variants = {
 };
 
 export default function Card() {
+  const [flipCard, setFlipCard] = useState("");
+
+  function handleClick() {
+    flipCard === "" ? setFlipCard("is-flipped") : setFlipCard("");
+  }
   return (
-    <div className="Card"></div>
+    <div className={`Card ${flipCard}`} onClick={handleClick}>
+      <div className="front-of-card">front</div>
+      <div className="back-of-card">back</div>
+    </div>
 
     // <motion.div
     // layout

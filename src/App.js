@@ -39,12 +39,12 @@ function App() {
           className="card-container"
           initial={{ height: 0 }}
           animate={{ height: 575 }}
-          transition={{ delay: 2, duration: 5 }}
+          transition={{ delay: 2, duration: 3 }}
         >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 6, duration: 1.5 }}
+            transition={{ delay: 4, duration: 1.5 }}
           >
             <Card />
           </motion.div>
