@@ -1,32 +1,76 @@
 .App {
   width: 100vw;
   height: 100vh;
+  background-color: #99bbff;
+}
+
+.App .grid-container {
+  width: 100%;
+  height: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
   justify-items: center;
-  background-color: #99bbff;
+  gap: 2rem;
 }
 
 .App .title {
   justify-self: center;
-  grid-column: span 2;
   margin: 0;
   color: #3f3d56;
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 2px;
+  text-align: center;
 }
 
-.App .card-container {
+.App footer {
+  width: 100%;
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+
+.App footer i {
+  color: #3f3d56;
+  transition: color 0.3s, top 0.3s ease-in-out;
+  font-size: 3rem;
+  position: relative;
+  top: 0;
+}
+
+.App footer i:hover {
+  top: -10px;
+}
+
+/* set colours for hover states */
+
+.fa-facebook-square:hover {
+  color: #4064ac;
+}
+
+.fa-instagram-square:hover {
+  color: #b03489;
+}
+
+.fa-twitter-square:hover {
+  color: #1c9cea;
+}
+.fa-linkedin:hover {
+  color: #0a66c2;
+}
+.fa-github-square:hover {
+  color: #24292f;
+}
+.App .card-container {
+  /* display: grid;
   gap: 5rem 100px;
   justify-content: center;
   align-content: center;
-  /* 400px is the current size of the cards */
-  grid-template-columns: minmax(400px, auto) minmax(400px, auto);
+  400px is the current size of the cards
+  grid-template-columns: minmax(400px, auto) minmax(400px, auto); */
 }
 
 .App .card-container > div {
-  display: grid;
-  z-index: 0;
+  /* display: grid;
+  z-index: 0; */
 }
