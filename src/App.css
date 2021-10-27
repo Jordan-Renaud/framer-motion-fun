@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Hnadwriting-Regular";
+  src: local("Hnadwriting-Regular"),
+    url(./fonts/Hnadwriting-Regular.woff) format("woff");
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -23,8 +29,19 @@
   text-align: center;
 }
 
+.App .card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.App .click-here {
+  font-family: "Hnadwriting-Regular";
+  font-size: 3rem;
+}
+
 .App footer {
-  width: 100%;
+  width: 50%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
