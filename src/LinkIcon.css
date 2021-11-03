@@ -1,0 +1,37 @@
+.LinkIcon i {
+  justify-self: stretch;
+  color: #3f3d56;
+  transition: color 0.3s, top 0.3s ease-in-out;
+  font-size: 3rem;
+  position: relative;
+  top: 0;
+}
+
+.LinkIcon i:hover {
+  top: -10px;
+}
+
+.LinkIcon .link-title {
+  font-family: "Hnadwriting-Regular";
+  font-size: 2rem;
+}
+
+/* set colours for hover states */
+
+.fa-facebook-square:hover {
+  color: #4064ac;
+}
+
+.fa-instagram-square:hover {
+  color: #b03489;
+}
+
+.fa-twitter-square:hover {
+  color: #1c9cea;
+}
+.fa-linkedin:hover {
+  color: #0a66c2;
+}
+.fa-github-square:hover {
+  color: #24292f;
+}
