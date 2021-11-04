@@ -35,12 +35,13 @@ const icons = [
   },
 ];
 
-const cardContent = [
+//load back to front
+const cardContentData = [
   {
-    front: { title: "", content: <LaptopGirl /> },
+    front: { title: "project 2", content: "image" },
     back: {
-      title: "me",
-      content: "New Zealander Abroad in London, HTML, CSS, React, JavaScript",
+      title: "project 2",
+      content: "this is what the project is",
     },
   },
   {
@@ -51,15 +52,27 @@ const cardContent = [
     },
   },
   {
-    front: { title: "project 2", content: "image" },
+    front: { title: "", content: <LaptopGirl /> },
     back: {
-      title: "project 2",
-      content: "this is what the project is",
+      title: "me",
+      content: "New Zealander Abroad in London, HTML, CSS, React, JavaScript",
     },
   },
 ];
 
 function App() {
+  const [cardClickCount, setCardClickCount] = useState(0);
+  const [cardContent, setCardContent] = useState(cardContentData);
+
+  function addClick() {
+    setCardClickCount(cardClickCount + 1);
+    console.log(cardClickCount);
+    if (cardClickCount % 2 === 1) {
+      console.log("send card to back");
+      setCardContent(cardContent.slice(0, -1));
+    }
+  }
+
   return (
     <div className="App">
       <motion.div
@@ -81,9 +94,9 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 4, duration: 1.5 }}
           >
-            {/* <Card front={cardContent[0].front} back={cardContent[0].back} /> */}
             {cardContent.map((card, index) => (
               <Card
+                addClickCount={addClick}
                 key={index}
                 front={card.front}
                 back={card.back}

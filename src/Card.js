@@ -1,15 +1,16 @@
 import "./Card.css";
 import { useState } from "react";
 
-export default function Card({ front, back, placement }) {
-  console.log(placement);
+export default function Card({ front, back, placement, addClickCount }) {
   const [flipCard, setFlipCard] = useState("");
 
-  function handleClick() {
+  function handleCardClick() {
     flipCard === "" ? setFlipCard("is-flipped") : setFlipCard("");
+    console.log("Clicked");
+    addClickCount();
   }
   return (
-    <div className={`Card ${flipCard} ${placement}`} onClick={handleClick}>
+    <div className={`Card ${flipCard} ${placement}`} onClick={handleCardClick}>
       <div className="front-of-card">
         <div className="content">
           <h2>{front.title}</h2>
