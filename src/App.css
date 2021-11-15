@@ -36,9 +36,63 @@
 }
 
 .App .click-here {
+  display: none;
   grid-column: 3;
   font-family: "Hnadwriting-Regular";
   font-size: 3rem;
+}
+
+.App .contact-form {
+  grid-area: 1 / 2 / 2 / 3;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
+  height: 575px;
+}
+
+.App .contact-form .handwriting-heading {
+  margin: 0;
+  font-family: "Hnadwriting-Regular";
+  font-size: 4rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.App .contact-form ::placeholder {
+  color: #3f3d56;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 1;
+}
+
+.App .contact-form .text-input {
+  color: #3f3d56;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-left: 0.3rem;
+  background-color: #d4dfec;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  min-height: 1.5rem;
+  width: 15rem;
+}
+.App .contact-form .text-input.large {
+  resize: none;
+  height: 12rem;
+}
+
+.App .contact-form .send-form {
+  font-family: "Hnadwriting-Regular";
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 3px;
+  height: 2.5rem;
+  justify-self: center;
+  background-color: transparent;
+}
+
+.App .contact-form .send-form:hover {
+  cursor: pointer;
 }
 
 .App footer {

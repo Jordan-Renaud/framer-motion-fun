@@ -45,7 +45,7 @@ const cardContentData = [
     },
   },
   {
-    front: { title: "project 1", content: "image" },
+    front: { title: "Component Based Recipes", content: "image" },
     back: {
       title: "project 1",
       content: "this is what the project is",
@@ -105,6 +105,47 @@ function App() {
                 }
               />
             ))}
+            <form
+              className="contact-form"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+            >
+              <h2 className="handwriting-heading">Contact Me</h2>
+              <p>
+                <label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                  />
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input
+                    className="text-input"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </label>
+              </p>
+              <p>
+                <label>
+                  <textarea
+                    className="text-input large"
+                    name="message"
+                    placeholder="Message"
+                  ></textarea>
+                </label>
+              </p>
+              <button className="send-form" type="submit">
+                Send
+              </button>
+            </form>
+
             <p className="click-here">
               click here!
               <br />⮐
