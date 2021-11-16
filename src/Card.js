@@ -14,7 +14,9 @@ export default function Card({ front, back, placement, addClickCount }) {
       <div className="front-of-card">
         <div className="content">
           <h2>{front.title}</h2>
-          {front.content}
+          <a className="website-link" href={front.link} target="_blank">
+            <div className="card-image">{front.content}</div>
+          </a>
         </div>
       </div>
       <div className="back-of-card">

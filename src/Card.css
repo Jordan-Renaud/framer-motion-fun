@@ -20,6 +20,7 @@
     8px 16px 16px hsl(220deg 60% 50% / 0.2),
     16px 32px 32px hsl(220deg 60% 50% / 0.2);
 }
+
 .Card.underneath {
   filter: blur(1px);
   transform: scale(0.99);
@@ -54,4 +55,12 @@
   display: grid;
   justify-content: center;
   align-content: center;
+}
+
+.Card .content .website-link {
+}
+
+.Card .content .card-image > * {
+  width: 80%;
+  border-radius: 10px;
 }

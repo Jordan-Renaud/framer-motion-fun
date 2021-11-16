@@ -3,6 +3,7 @@ import { AnimateSharedLayout, motion } from "framer-motion";
 import Card from "./Card";
 import LaptopGirl from "./images/girl-with-laptop";
 import LinkIcon from "./LinkIcon";
+import easyRecipeCard from "./images/easy-recipes.png";
 import "./App.css";
 
 /* cards are displayed bottom to top */
@@ -42,10 +43,15 @@ const cardContentData = [
     back: {
       title: "project 2",
       content: "this is what the project is",
+      link: "#",
     },
   },
   {
-    front: { title: "Component Based Recipes", content: "image" },
+    front: {
+      title: "Component Based Recipes",
+      content: <img src={easyRecipeCard} />,
+      link: "https://easy-recipes-jr.netlify.app/",
+    },
     back: {
       title: "project 1",
       content: "this is what the project is",
@@ -56,6 +62,7 @@ const cardContentData = [
     back: {
       title: "me",
       content: "New Zealander Abroad in London, HTML, CSS, React, JavaScript",
+      link: "#",
     },
   },
 ];
