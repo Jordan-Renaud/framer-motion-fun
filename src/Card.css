@@ -26,7 +26,7 @@
   transform: scale(0.99);
 }
 
-.Card > div {
+.Card .card-side {
   position: absolute;
   border-radius: 10px;
   width: 100%;
@@ -55,9 +55,6 @@
   display: grid;
   justify-content: center;
   align-content: center;
-}
-
-.Card .content .website-link {
 }
 
 .Card .content .card-image > * {

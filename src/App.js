@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Card from "./Card";
 import LaptopGirl from "./images/girl-with-laptop";
+import Arrow from "./images/arrow";
 import LinkIcon from "./LinkIcon";
 import easyRecipeCard from "./images/easy-recipes.png";
+import weatherAppCard from "./images/weather-app.png";
 import "./App.css";
 
 /* cards are displayed bottom to top */
@@ -39,11 +41,15 @@ const icons = [
 //load back to front
 const cardContentData = [
   {
-    front: { title: "project 2", content: "image" },
+    front: { title: "Weather Project", content: <img src={weatherAppCard} /> },
     back: {
-      title: "project 2",
-      content: "this is what the project is",
-      link: "#",
+      title: "Weather Project",
+      content: [
+        "Using: Vanilla JavaScript, HTML, CSS",
+        "Design: Played with neumorphic design to give an apple-esk feel",
+        "Learnt: API usage, manipulating the DOM, first project finished.",
+      ],
+      link: "https://weather-app-jrenaud.netlify.app/",
     },
   },
   {
@@ -53,15 +59,20 @@ const cardContentData = [
       link: "https://easy-recipes-jr.netlify.app/",
     },
     back: {
-      title: "project 1",
-      content: "this is what the project is",
+      title: "Component Based Recipes",
+      content: [
+        "Idea: Easily being able to swap out ingredients in a meal.",
+        "Using: React, HTMl, CSS",
+        "Design: Simple and clean, focusing on usability. No ads to distract the user.",
+        "Learnt: React Hooks, multiple page application, APIs, CSS grid.",
+      ],
     },
   },
   {
     front: { title: "", content: <LaptopGirl /> },
     back: {
       title: "me",
-      content: "New Zealander Abroad in London, HTML, CSS, React, JavaScript",
+      content: ["New Zealander Abroad in London, HTML, CSS, React, JavaScript"],
       link: "#",
     },
   },
@@ -159,6 +170,7 @@ function App() {
             </p>
           </motion.div>
         </motion.div>
+        {/* <Arrow /> */}
         <footer>
           {icons.map((icon) => (
             <LinkIcon
