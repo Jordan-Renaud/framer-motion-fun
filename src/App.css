@@ -36,10 +36,14 @@
 }
 
 .App .click-here {
-  display: none;
   grid-column: 3;
   font-family: "Hnadwriting-Regular";
   font-size: 3rem;
+}
+
+.App .click-here .small-arrow {
+  width: 10rem;
+  height: auto;
 }
 
 .App .contact-form {

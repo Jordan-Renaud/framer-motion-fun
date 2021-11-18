@@ -94,7 +94,9 @@ function App() {
 
             <p className="click-here">
               click here!
-              <br />⮐
+              <div className="small-arrow">
+                <Arrow />
+              </div>
             </p>
           </motion.div>
         </motion.div>
