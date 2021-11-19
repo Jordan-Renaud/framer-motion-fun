@@ -41,9 +41,22 @@
   font-size: 3rem;
 }
 
-.App .click-here .small-arrow {
+.App .small-arrow {
   width: 10rem;
   height: auto;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.App .next-card-button-container {
+  grid-area: 2 / 2 / 2 / 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.App .next-card-button-container .small-arrow:hover {
+  cursor: pointer;
 }
 
 .App .contact-form {
