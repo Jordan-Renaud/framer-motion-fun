@@ -93,12 +93,12 @@ function App() {
             </button>
           </form>
 
-          <p className="click-here">
+          <div className="click-here">
             click here!
             <div className="small-arrow">
               <Arrow />
             </div>
-          </p>
+          </div>
 
           <div className="next-card-button-container">
             <motion.button
@@ -125,8 +125,9 @@ function App() {
         </motion.div>
       </motion.div>
       <footer>
-        {icons.map((icon) => (
+        {icons.map((icon, index) => (
           <LinkIcon
+            key={index}
             iconTitle={icon.title}
             iconLink={icon.link}
             iconId={icon.id}

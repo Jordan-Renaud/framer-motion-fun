@@ -14,7 +14,12 @@ export default function Card({ front, back, placement, addClickCount }) {
       <div className="front-of-card card-side">
         <div className="content">
           <h2 className="sub-title">{front.title}</h2>
-          <a className="website-link" href={front.link} target="_blank">
+          <a
+            className="website-link"
+            href={front.link}
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="card-image">{front.content}</div>
           </a>
         </div>
@@ -22,8 +27,10 @@ export default function Card({ front, back, placement, addClickCount }) {
       <div className="back-of-card card-side">
         <div className="content">
           <h2 className="sub-title">{back.title}</h2>
-          {back.content.map((section) => (
-            <div className="content-section">{section}</div>
+          {back.content.map((section, index) => (
+            <div className="content-section" key={index}>
+              {section}
+            </div>
           ))}
         </div>
       </div>

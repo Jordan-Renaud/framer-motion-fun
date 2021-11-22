@@ -33,7 +33,12 @@ export const icons = [
 //load back to front
 export const cardContentData = [
   {
-    front: { title: "Weather Project", content: <img src={weatherAppCard} /> },
+    front: {
+      title: "Weather Project",
+      content: (
+        <img src={weatherAppCard} alt="screenshot of the weather website" />
+      ),
+    },
     back: {
       title: "Weather Project",
       content: [
@@ -47,7 +52,12 @@ export const cardContentData = [
   {
     front: {
       title: "Component Based Recipes",
-      content: <img src={easyRecipeCard} />,
+      content: (
+        <img
+          src={easyRecipeCard}
+          alt="screenshot of the component based recipe card website"
+        />
+      ),
       link: "https://easy-recipes-jr.netlify.app/",
     },
     back: {
