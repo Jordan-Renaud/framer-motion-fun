@@ -1,0 +1,11 @@
+.ArrowButton {
+  width: 10rem;
+  height: auto;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.ArrowButton:hover {
+  cursor: pointer;
+}

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { icons, cardContentData } from "./data";
 import Card from "./Card";
+import ArrowButton from "./ArrowButton";
 import Arrow from "./images/arrow";
 import RightArrow from "./images/rightArrow";
 import LinkIcon from "./LinkIcon";
-import { icons, cardContentData } from "./data";
 import "./App.css";
 
 function App() {
@@ -101,26 +102,8 @@ function App() {
           </div>
 
           <div className="next-card-button-container">
-            <motion.button
-              className="small-arrow"
-              whileHover={{ scale: 1.2 }}
-              onHoverStart={(e) => {
-                console.log(e);
-              }}
-              onHoverEnd={(e) => {}}
-            >
-              <Arrow />
-            </motion.button>
-            <motion.button
-              className="small-arrow"
-              whileHover={{ scale: 1.2 }}
-              onHoverStart={(e) => {
-                console.log(e);
-              }}
-              onHoverEnd={(e) => {}}
-            >
-              <RightArrow />
-            </motion.button>
+            <ArrowButton arrow={<Arrow />} />
+            <ArrowButton arrow={<RightArrow />} />
           </div>
         </motion.div>
       </motion.div>
