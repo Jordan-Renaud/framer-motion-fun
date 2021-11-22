@@ -9,16 +9,14 @@ import LinkIcon from "./LinkIcon";
 import "./App.css";
 
 function App() {
-  const [cardClickCount, setCardClickCount] = useState(0);
   const [cardContent, setCardContent] = useState(cardContentData);
 
-  function addClick() {
-    setCardClickCount(cardClickCount + 1);
-    console.log(cardClickCount);
-    if (cardClickCount % 2 === 1) {
-      console.log("send card to back");
-      setCardContent(cardContent.slice(0, -1));
-    }
+  function nextCard() {
+    setCardContent(cardContent.slice(0, -1));
+  }
+
+  function previousCard() {
+    console.log("previous card");
   }
 
   return (
@@ -43,10 +41,8 @@ function App() {
         >
           {cardContent.map((card, index) => (
             <Card
-              addClickCount={addClick}
-              key={index}
-              front={card.front}
-              back={card.back}
+              key={card.front.title}
+              cardData={card}
               placement={
                 index === cardContent.length - 1 ? "top" : "underneath"
               }
@@ -102,8 +98,8 @@ function App() {
           </div>
 
           <div className="next-card-button-container">
-            <ArrowButton arrow={<Arrow />} />
-            <ArrowButton arrow={<RightArrow />} />
+            <ArrowButton arrow={<Arrow />} onClick={previousCard} />
+            <ArrowButton arrow={<RightArrow />} onClick={nextCard} />
           </div>
         </motion.div>
       </motion.div>
