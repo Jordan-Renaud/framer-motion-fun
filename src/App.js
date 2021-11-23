@@ -9,14 +9,17 @@ import LinkIcon from "./LinkIcon";
 import "./App.css";
 
 function App() {
-  const [cardContent, setCardContent] = useState(cardContentData);
+  const [cardsLeft, setCardsLeft] = useState(cardContentData);
+  const [cardsRemoved, setCardsRemoved] = useState([""]);
 
   function nextCard() {
-    setCardContent(cardContent.slice(0, -1));
+    setCardsRemoved([...cardsRemoved, cardsLeft[cardsLeft.length - 1]]);
+    setCardsLeft(cardsLeft.slice(0, -1));
   }
 
   function previousCard() {
-    console.log("previous card");
+    setCardsLeft([...cardsLeft, cardsRemoved[cardsRemoved.length - 1]]);
+    setCardsRemoved(cardsRemoved.slice(0, -1));
   }
 
   return (
@@ -39,13 +42,11 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1.5 }}
         >
-          {cardContent.map((card, index) => (
+          {cardsLeft.map((card, index) => (
             <Card
               key={card.front.title}
               cardData={card}
-              placement={
-                index === cardContent.length - 1 ? "top" : "underneath"
-              }
+              placement={index === cardsLeft.length - 1 ? "top" : "underneath"}
             />
           ))}
 

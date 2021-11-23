@@ -23,7 +23,6 @@
 
 .Card.underneath {
   filter: blur(1px);
-  transform: scale(0.99);
 }
 
 .Card .card-side {
