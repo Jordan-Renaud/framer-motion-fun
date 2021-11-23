@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { icons, cardContentData } from "./data";
+import { icons, rawCardData } from "./data";
 import Card from "./Card";
 import ArrowButton from "./ArrowButton";
 import Arrow from "./images/arrow";
@@ -9,8 +9,18 @@ import LinkIcon from "./LinkIcon";
 import "./App.css";
 
 function App() {
-  const [cardsLeft, setCardsLeft] = useState(cardContentData);
+  const amountOfRawDataCards = rawCardData.length;
+
+  const [cardsLeft, setCardsLeft] = useState(rawCardData);
   const [cardsRemoved, setCardsRemoved] = useState([""]);
+  const [clickHereOpacity, setclickHereOpacity] = useState({ opacity: 1 });
+
+  //check to see if click here arrow should be displayed
+  useEffect(() => {
+    cardsLeft.length === amountOfRawDataCards
+      ? setclickHereOpacity({ opacity: 1 })
+      : setclickHereOpacity({ opacity: 0 });
+  }, [cardsLeft, amountOfRawDataCards]);
 
   function nextCard() {
     setCardsRemoved([...cardsRemoved, cardsLeft[cardsLeft.length - 1]]);
@@ -91,12 +101,17 @@ function App() {
             </button>
           </form>
 
-          <div className="click-here">
+          <motion.div
+            className="click-here"
+            initial={{ opacity: 1 }}
+            animate={clickHereOpacity}
+            transition={{ duration: 1.5 }}
+          >
             click here!
             <div className="small-arrow">
               <Arrow />
             </div>
-          </div>
+          </motion.div>
 
           <div className="next-card-button-container">
             <ArrowButton arrow={<Arrow />} onClick={previousCard} />

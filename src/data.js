@@ -31,7 +31,7 @@ export const icons = [
 ];
 
 //load back to front
-export const cardContentData = [
+export const rawCardData = [
   {
     front: {
       title: "Weather Project",
