@@ -20,6 +20,8 @@ function App() {
   const [nextArrowOpacity, setNextArrowOpacity] = useState({
     opacity: 1,
   });
+  const [previousArrowState, setPreviousArrowState] = useState("hide");
+  const [nextArrowState, setNextArrowState] = useState("show");
 
   //check to see if click here arrow should be displayed
   useEffect(() => {
@@ -27,18 +29,23 @@ function App() {
       //show click here, and remove left arrow
       setclickHereOpacity({ opacity: 1 });
       setPreviousArrowOpacity({ opacity: 0 });
+      setPreviousArrowState("hide");
+      setNextArrowState("show");
     } else if (cardsLeft.length === 0) {
       //remove next arrow
       setNextArrowOpacity({
         opacity: 0,
       });
+      setNextArrowState("hide");
     } else {
       //remove clickhere and show both arrows
       setclickHereOpacity({ opacity: 0 });
       setPreviousArrowOpacity({ opacity: 1 });
+      setPreviousArrowState("show");
       setNextArrowOpacity({
         opacity: 1,
       });
+      setNextArrowState("show");
     }
   }, [cardsLeft, amountOfRawDataCards]);
 
@@ -135,9 +142,10 @@ function App() {
 
           <div className="next-card-button-container">
             <motion.div
+              className={`${previousArrowState}`}
               initial={{ opacity: 0 }}
               animate={previousArrowOpacity}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.5 }}
             >
               <ArrowButton
                 arrow={<Arrow toBeAnimated={true} />}
@@ -145,9 +153,10 @@ function App() {
               />
             </motion.div>
             <motion.div
+              className={`${nextArrowState}`}
               initial={{ opacity: 1 }}
               animate={nextArrowOpacity}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.5 }}
             >
               <ArrowButton
                 arrow={<RightArrow toBeAnimated={true} />}

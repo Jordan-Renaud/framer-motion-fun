@@ -109,3 +109,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
 }
+
+.hide {
+  z-index: -2;
+}
