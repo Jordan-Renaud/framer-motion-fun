@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Arrow from "./images/arrow";
 import "./Card.css";
 
 export default function Card({ cardData, placement }) {

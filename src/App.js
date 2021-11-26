@@ -23,7 +23,7 @@ function App() {
   const [previousArrowState, setPreviousArrowState] = useState("hide");
   const [nextArrowState, setNextArrowState] = useState("show");
 
-  //check to see if click here arrow should be displayed
+  //handles: click here, and next/previous arrow buttons
   useEffect(() => {
     if (cardsLeft.length === amountOfRawDataCards) {
       //show click here, and remove left arrow
@@ -132,7 +132,7 @@ function App() {
             className="click-here"
             initial={{ opacity: 1 }}
             animate={clickHereOpacity}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
           >
             click here!
             <div className="small-arrow">

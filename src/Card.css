@@ -52,11 +52,30 @@
   width: 100%;
   height: 100%;
   display: grid;
+  grid-template-rows: 5rem 1fr;
+  grid-auto-rows: 1fr;
   justify-content: center;
   align-content: center;
+  gap: 1rem;
+}
+
+.Card .content .sub-title {
+  align-self: center;
+}
+
+.Card .content .website-link {
+  align-self: start;
 }
 
 .Card .content .card-image > * {
+  width: 95%;
+  margin: 0.5rem;
+  border-radius: 10px;
+}
+
+.Card .content .card-image {
   width: 80%;
   border-radius: 10px;
+  border: solid 2px #3f3d56;
+  margin: 0 auto;
 }
