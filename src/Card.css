@@ -85,9 +85,19 @@
   margin: 0 auto;
 }
 
+.Card .content .check-it-out-container {
+  display: flex;
+  justify-content: end;
+  margin: 1.5rem;
+}
+
+.Card .tilted-arrow {
+  transform: rotate(45deg);
+  height: 2rem;
+}
+
 .Card .hand-written {
   font-family: "Hnadwriting-Regular";
   font-size: 3rem;
-  line-height: 1rem;
   margin: 0;
 }

@@ -27,9 +27,12 @@ export default function Card({ cardData, placement }) {
               >
                 <div className="card-image">{cardData.front.content}</div>
               </a>
-
-              <Arrow />
-              <p className="hand-written">Check it out</p>
+              <div className="check-it-out-container">
+                <div className="tilted-arrow">
+                  <Arrow />
+                </div>
+                <p className="hand-written">Check it out</p>
+              </div>
             </div>
           )}
         </div>
