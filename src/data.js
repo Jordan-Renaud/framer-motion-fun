@@ -71,7 +71,7 @@ export const rawCardData = [
     },
   },
   {
-    front: { title: "", content: <LaptopGirl /> },
+    front: { title: "FrontCard", content: <LaptopGirl /> },
     back: {
       title: "me",
       content: ["New Zealander Abroad in London, HTML, CSS, React, JavaScript"],
