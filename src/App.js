@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { icons, rawCardData } from "./data";
 import Card from "./Card";
 import ArrowButton from "./ArrowButton";
@@ -79,13 +79,17 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1.5 }}
         >
-          {cardsLeft.map((card, index) => (
-            <Card
-              key={card.front.title}
-              cardData={card}
-              placement={index === cardsLeft.length - 1 ? "top" : "underneath"}
-            />
-          ))}
+          <AnimatePresence>
+            {cardsLeft.map((card, index) => (
+              <Card
+                key={card.front.title}
+                cardData={card}
+                placement={
+                  index === cardsLeft.length - 1 ? "top" : "underneath"
+                }
+              />
+            ))}
+          </AnimatePresence>
 
           <form
             className="contact-form"
