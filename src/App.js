@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { icons, rawCardData } from "./data";
 import Card from "./Card";
 import ArrowButton from "./ArrowButton";
-import Arrow from "./images/arrow";
-import RightArrow from "./images/rightArrow";
+import LeftArrow from "./images/LeftArrow";
+import RightArrow from "./images/RightArrow";
 import LinkIcon from "./LinkIcon";
 import "./App.css";
 
@@ -13,7 +13,6 @@ function App() {
 
   const [cardsLeft, setCardsLeft] = useState(rawCardData);
   const [cardsRemoved, setCardsRemoved] = useState([""]);
-  const [clickHereOpacity, setclickHereOpacity] = useState({ opacity: 1 });
   const [previousArrowOpacity, setPreviousArrowOpacity] = useState({
     opacity: 0,
   });
@@ -26,8 +25,7 @@ function App() {
   //handles: click here, and next/previous arrow buttons
   useEffect(() => {
     if (cardsLeft.length === amountOfRawDataCards) {
-      //show click here, and remove left arrow
-      setclickHereOpacity({ opacity: 1 });
+      //remove left arrow
       setPreviousArrowOpacity({ opacity: 0 });
       setPreviousArrowState("hide");
       setNextArrowState("show");
@@ -38,8 +36,7 @@ function App() {
       });
       setNextArrowState("hide");
     } else {
-      //remove clickhere and show both arrows
-      setclickHereOpacity({ opacity: 0 });
+      //show both arrows
       setPreviousArrowOpacity({ opacity: 1 });
       setPreviousArrowState("show");
       setNextArrowOpacity({
@@ -132,18 +129,6 @@ function App() {
             </button>
           </form>
 
-          <motion.div
-            className="click-here"
-            initial={{ opacity: 1 }}
-            animate={clickHereOpacity}
-            transition={{ duration: 0.5 }}
-          >
-            click here!
-            <div className="small-arrow">
-              <Arrow toBeAnimated={false} />
-            </div>
-          </motion.div>
-
           <div className="next-card-button-container">
             <motion.div
               className={`${previousArrowState}`}
@@ -151,10 +136,7 @@ function App() {
               animate={previousArrowOpacity}
               transition={{ duration: 0.5 }}
             >
-              <ArrowButton
-                arrow={<Arrow toBeAnimated={true} />}
-                onClick={previousCard}
-              />
+              <ArrowButton arrow={<LeftArrow />} onClick={previousCard} />
             </motion.div>
             <motion.div
               className={`${nextArrowState}`}

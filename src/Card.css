@@ -65,8 +65,8 @@
 
 .Card .sub-title {
   align-self: center;
-  font-family: "Hnadwriting-Regular";
-  font-size: 3rem;
+  color: #3f3d56;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .Card .content .website-link {
@@ -98,12 +98,6 @@
   height: 2rem;
 }
 
-.Card .hand-written {
-  font-family: "Hnadwriting-Regular";
-  font-size: 3rem;
-  margin: 0;
-}
-
 .Card .info {
   display: grid;
   grid-template-rows: 5rem 1fr;
@@ -111,6 +105,6 @@
 }
 
 .Card .content-section {
-  font-family: "Hnadwriting-Regular";
-  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
 }
