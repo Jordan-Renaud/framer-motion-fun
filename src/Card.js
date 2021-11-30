@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Arrow from "./images/arrow";
 import "./Card.css";
 
-export default function Card({ cardData, placement, key }) {
+export default function Card({ cardData, placement }) {
   const [isFlipped, setIsFlippedCard] = useState(false);
   const isFrontCard = cardData.front.title === "FrontCard";
 
@@ -23,7 +23,7 @@ export default function Card({ cardData, placement, key }) {
         rotateY: isFlipped ? 180 : 0,
       }}
       exit={{ x: -300, opacity: 0 }}
-      transition={{ duration: 2, type: "easeInOut" }}
+      transition={{ duration: 1.5, type: "easeInOut" }}
     >
       <div className="front-of-card card-side">
         <div className="content">
@@ -52,7 +52,7 @@ export default function Card({ cardData, placement, key }) {
         </div>
       </div>
       <div className="back-of-card card-side">
-        <div className="content">
+        <div className="info">
           <h2 className="sub-title">{cardData.back.title}</h2>
           {cardData.back.content.map((section, index) => (
             <div className="content-section" key={index}>

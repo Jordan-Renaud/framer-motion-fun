@@ -7,7 +7,6 @@
   position: relative;
   transform-style: preserve-3d;
   transform-origin: center left;
-  /* transition: transform 1.5s; */
 }
 
 .Card:hover {
@@ -64,8 +63,10 @@
   gap: 1rem;
 }
 
-.Card .content .sub-title {
+.Card .sub-title {
   align-self: center;
+  font-family: "Hnadwriting-Regular";
+  font-size: 3rem;
 }
 
 .Card .content .website-link {
@@ -88,7 +89,7 @@
 
 .Card .content .check-it-out-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin: 1.5rem;
 }
 
@@ -101,4 +102,15 @@
   font-family: "Hnadwriting-Regular";
   font-size: 3rem;
   margin: 0;
+}
+
+.Card .info {
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.Card .content-section {
+  font-family: "Hnadwriting-Regular";
+  font-size: 2rem;
 }
