@@ -22,7 +22,7 @@ function App() {
   const [previousArrowState, setPreviousArrowState] = useState("hide");
   const [nextArrowState, setNextArrowState] = useState("show");
 
-  //handles: click here, and next/previous arrow buttons
+  //handles next/previous arrow buttons
   useEffect(() => {
     if (cardsLeft.length === amountOfRawDataCards) {
       //remove left arrow
@@ -94,7 +94,7 @@ function App() {
             method="POST"
             data-netlify="true"
           >
-            <h2 className="handwriting-heading">Contact Me</h2>
+            <h2 className="title">Contact Me</h2>
             <p>
               <label>
                 <input

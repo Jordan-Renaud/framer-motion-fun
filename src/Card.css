@@ -110,3 +110,11 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
 }
+
+@media (max-width: 414px) {
+  .Card {
+    width: 320px;
+    height: 460px;
+    margin: 0 auto;
+  }
+}

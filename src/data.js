@@ -38,6 +38,7 @@ export const rawCardData = [
       content: (
         <img src={weatherAppCard} alt="screenshot of the weather website" />
       ),
+      link: "https://weather-app-jrenaud.netlify.app/",
     },
     back: {
       title: "Weather Project",
@@ -46,7 +47,6 @@ export const rawCardData = [
         "Design: Played with neumorphic design to give an apple-esk feel",
         "Learnt: API usage, manipulating the DOM, first project finished.",
       ],
-      link: "https://weather-app-jrenaud.netlify.app/",
     },
   },
   {

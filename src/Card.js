@@ -7,7 +7,7 @@ export default function Card({ cardData, placement }) {
   const isFrontCard = cardData.front.title === "FrontCard";
 
   const animateFlip = {
-    x: isFlipped ? 400 : 0,
+    x: isFlipped ? "100%" : 0,
     opacity: 1,
     rotateY: isFlipped ? 180 : 0,
   };

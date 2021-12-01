@@ -30,14 +30,6 @@
   column-gap: 2rem;
 }
 
-.App .small-arrow {
-  width: 10rem;
-  height: auto;
-  padding: 0.5rem;
-  background-color: transparent;
-  border: none;
-}
-
 .App .next-card-button-container {
   grid-area: 2 / 2 / 2 / 3;
   display: flex;
@@ -53,13 +45,10 @@
   height: 575px;
 }
 
-.App .contact-form .handwriting-heading {
+.App .contact-form .title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #3f3d56;
   font-size: 1.5rem;
   font-weight: bolder;
-  text-align: center;
 }
 
 .App .contact-form ::placeholder {
@@ -109,4 +98,39 @@
 
 .hide {
   z-index: -2;
+}
+
+@media (max-width: 1440px) {
+  .App {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .App {
+    gap: 2rem;
+  }
+
+  .App .title {
+    font-size: 1.5rem;
+  }
+
+  .App .next-card-button-container {
+    padding: 3rem 0;
+  }
+
+  .App footer {
+    width: 90%;
+    top: -2rem;
+    position: relative;
+  }
+
+  .App .contact-form {
+    width: 320px;
+    height: 460px;
+  }
+
+  .App .card-container {
+    width: 100vw;
+  }
 }
