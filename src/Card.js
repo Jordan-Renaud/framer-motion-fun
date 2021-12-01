@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Arrow from "./images/arrow";
 import "./Card.css";
 
 export default function Card({ cardData, placement }) {
   const [isFlipped, setIsFlippedCard] = useState(false);
   const isFrontCard = cardData.front.title === "FrontCard";
+
+  const animateFlip = {
+    x: isFlipped ? 400 : 0,
+    opacity: 1,
+    rotateY: isFlipped ? 180 : 0,
+  };
 
   function handleCardClick() {
     !isFlipped ? setIsFlippedCard(true) : setIsFlippedCard(false);
@@ -17,13 +22,14 @@ export default function Card({ cardData, placement }) {
       onClick={handleCardClick}
       key={cardData.front.title}
       initial={{ x: 300, opacity: 0 }}
-      animate={{
-        x: isFlipped ? 400 : 0,
-        opacity: 1,
-        rotateY: isFlipped ? 180 : 0,
-      }}
+      animate={animateFlip}
       exit={{ x: -300, opacity: 0 }}
       transition={{ duration: 1.5, type: "easeInOut" }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.5, type: "easeInOut" },
+      }}
+      whileTap={{ scale: 0.9 }}
     >
       <div className="front-of-card card-side">
         <div className="content">
@@ -41,12 +47,6 @@ export default function Card({ cardData, placement }) {
               >
                 <div className="card-image">{cardData.front.content}</div>
               </a>
-              <div className="check-it-out-container">
-                <div className="tilted-arrow">
-                  <Arrow />
-                </div>
-                <p className="hand-written">Check it out</p>
-              </div>
             </div>
           )}
         </div>
