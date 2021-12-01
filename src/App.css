@@ -41,7 +41,7 @@
 .App .next-card-button-container {
   grid-area: 2 / 2 / 2 / 3;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .App .contact-form {
